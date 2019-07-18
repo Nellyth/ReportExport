@@ -1,0 +1,62 @@
+{% extends "Base_Generic.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="content content-center">
+        <div class="container-fluid" style="padding-left: 20%">
+            <h3 class="card-title">Document Exporter Report</h3>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% if form.errors %}
+                    {{ form.errors }}
+                {% endif %}
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group">
+                            <label for="{{ form.filter_by.name }}">{{ form.filter_by.label }}</label>
+                            {{ form.filter_by }}
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group">
+                            <label for="{{ form.start_date.name }}">{{ form.start_date.label }}</label>
+                            {{ form.start_date }}
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group">
+                            <label for="{{ form.final_date.name }}">{{ form.final_date.label }}</label>
+                            {{ form.final_date }}
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group">
+                            <label for="{{ form.email_id.name }}">{{ form.email_id.label }}</label>
+                            {{ form.email_id }}
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group">
+                            <label for="{{ form.customer.name }}">{{ form.customer.label }}</label>
+                            {{ form.customer }}
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group">
+                            <label for="{{ form.sent.name }}">{{ form.sent.label }}</label>
+                            {{ form.sent }}
+                        </div>
+                    </div>
+
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-label-group">
+                            <button class="btn btn-primary btn-block text-uppercase" type="submit"><i
+                                    class="fas fa-save mr-2"></i>GO
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

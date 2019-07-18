@@ -1,0 +1,53 @@
+{% extends "Base_Generic.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="content content-center">
+        <div class="container-fluid" style="padding-left: 20%">
+            <h3 class="card-title">File Parser</h3>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group">
+                            <label for="{{ form.customer.name }}">{{ form.customer.label }}</label>
+                            {{ form.customer }}
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group">
+                            <label for="{{ form.emailID.name }}">{{ form.emailID.label }}</label>
+                            {{ form.emailID }}
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group">
+                            <label for="{{ form.email_date.name }}">{{ form.email_date.label }}</label>
+                            {{ form.email_date }}
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group">
+                            <label for="{{ form.options.name }}">{{ form.options.label }}</label>
+                            {{ form.options }}
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-file">
+                            <label for="{{ form.file.name }}">{{ form.file.label }}</label>
+                            {{ form.file }}
+                        </div>
+                    </div>
+
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-label-group">
+                            <button class="btn btn-primary btn-block text-uppercase" type="submit"><i
+                                    class="fas fa-save mr-2"></i>Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

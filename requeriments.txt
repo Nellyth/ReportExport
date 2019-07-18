@@ -1,0 +1,7 @@
+amqp==2.5.0
+celery==4.3.0
+Django==2.2.1
+django-excel-response==2.0.3
+numpy==1.16.3
+pandas==0.24.2
+psycopg2==2.8.2

@@ -1,0 +1,31 @@
+{% extends "Base_Generic.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="content content-center">
+        <div class="container-fluid" style="padding-left: 20%">
+            <h3 class="card-title">Download Exporter Report</h3>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% if form.errors %}
+                    {{ form.errors }}
+                {% endif %}
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group">
+                            <label for="{{ form.key.name }}">{{ form.key.label }}</label>
+                            {{ form.key }}
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-label-group">
+                            <button class="btn btn-primary btn-block text-uppercase" type="submit"><i
+                                    class="fas fa-save mr-2"></i>GO
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
